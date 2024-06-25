@@ -3,14 +3,14 @@ provider "aws" {
 }
 
 module "rds" {
-  source                 = "../"
-  account_id             = var.account_id
-  allocated_storage      = var.allocated_storage
-  engine_version         = var.engine_version
-  instance_class         = var.instance_class
-  db_name                = var.db_name
-  username               = var.username
-  parameter_group_name   = var.parameter_group_name
-  vpc_security_group_ids = var.vpc_security_group_ids
-  kms_key_alias          = var.kms_key_alias
+  source                 = "/../"
+  account_id             = "637423344778"
+  allocated_storage      = "20"
+  engine_version         = "8.0"
+  instance_class         = "db.t3.micro"
+  db_name                = "mysql_database"
+  username               = "admin"
+  parameter_group_name   = "default.mysql8.0"
+  vpc_security_group_ids = ["sg-0c226fddab0a2860c"]
+  kms_key_alias          = "mysql-key"
 }
